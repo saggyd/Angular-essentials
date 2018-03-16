@@ -1,0 +1,13 @@
+<hr/>
+<div class="col-md-6">
+  <h4>Employee Details</h4>
+</div>
+<hr/>
+<div class="col-md-8">
+  <ul class="list-group">
+    <li class="list-group-item justify-content-between" *ngFor="let user of userArr">
+      {{user.name}}
+      <span class="badge badge-default badge-pill">{{user.id}}</span>
+    </li>
+  </ul>
+</div>
