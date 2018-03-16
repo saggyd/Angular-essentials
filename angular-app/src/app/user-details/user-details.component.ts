@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { StarWarsService } from '../starwars.service';
 
 @Component({
   selector: 'app-user-details',
@@ -7,14 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserDetailsComponent implements OnInit {
 
-  public userArr = [
-    {name: 'Satwik Das', id: 1234},
-    {name: 'Neeta Rana', id: 1235}
-  ];
+  public userArr = [];
 
-  constructor() { }
+  constructor(private swService: StarWarsService) { 
+    this.userArr = this.swService.getUser();
+  }
 
   ngOnInit() {
   }
+
+  
 
 }
